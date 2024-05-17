@@ -16,7 +16,9 @@ private List<Instruction> instructionSeq;
         return instructionSeq;
     }
 
-
+    public Rover getR1() {
+        return r1;
+    }
 
     public MoveRover() {
         validatePlateauSize();
@@ -36,18 +38,20 @@ private List<Instruction> instructionSeq;
         instructionSeq = IP.validateOption();
         for (Instruction i : instructionSeq) {
             if (i == Instruction.R) {
-                plateau.checkBoundary(r1);
-
                 System.out.println("**Rotating right...**");
                 r1.rotate(Instruction.R);
             } else if (i == Instruction.L) {
-                plateau.checkBoundary(r1);
                 System.out.println("**Rotating left...**");
                 r1.rotate(Instruction.L);
             } else if (i == Instruction.M) {
-                plateau.checkBoundary(r1);
-                System.out.println("**Moving ...**");
-                r1.move(r1.getFacing());
+                if (plateau.checkBoundary(r1)){
+                    System.out.println("**Moving ...**");
+                    r1.move(r1.getFacing());
+                }else {
+                    System.out.println("ERROR! Rover detected boundary cannot perform move.");
+                }
+
+
             }
         }
         System.out.print("\n");

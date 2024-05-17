@@ -33,7 +33,7 @@ public class Position {
     }
 
     public void validateRoverDrop(){
-        Scanner scanner = new Scanner(System .in);
+        Scanner scanner = new Scanner(System.in);
         String input;
         boolean flag = true;
         do{
@@ -61,7 +61,7 @@ public class Position {
                         break;
                 }
                 try {
-                    if (x > MoveRover.plateau.getPlateau().length - 2 || y > MoveRover.plateau.getPlateau()[0].length - 2) {
+                    if (x > MoveRover.plateau.getPlateau().length - 3 || y > MoveRover.plateau.getPlateau()[0].length - 3) {
                         throw new IndexOutOfBoundsException();
                     }else{
                         flag = false;
@@ -73,7 +73,6 @@ public class Position {
             }else{
                 System.out.println("Invalid input format should be in ([x position] [y position] [N/E/S/W]) e.g. 1 1 N");
             }
-
 
         }while(flag);
     }

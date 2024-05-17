@@ -22,6 +22,7 @@ public class MenuParser {
                 }
             } catch (InputMismatchException e) {
                 System.out.println("INVALID OPTION! please select an option between 1-4");
+                scanner.next();
             }
         } while (flag);
 
