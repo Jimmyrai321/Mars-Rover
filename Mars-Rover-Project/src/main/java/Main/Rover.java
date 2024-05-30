@@ -19,7 +19,7 @@ public class Rover extends Position{
                     setFacing(CompassDirection.S);
                 }
             }
-            System.out.println("**Rotating left successful**");
+            System.out.println(Colour.success+"**Rotating left successful**"+Colour.RESET);
         }else if (instruction == Instruction.R){
             switch(getFacing()) {
                 case CompassDirection.N -> {
@@ -35,7 +35,7 @@ public class Rover extends Position{
                     setFacing(CompassDirection.N);
                 }
             }
-            System.out.println("**Rotating right successful**");
+            System.out.println(Colour.success+"**Rotating right successful**"+Colour.RESET);
 
         }
     }
@@ -55,7 +55,7 @@ public class Rover extends Position{
                 setXY(getX()-1,getY());
             }
         }
-        System.out.println("**Successfully moved one space "+ compassDirection+"**");
+        System.out.println(Colour.success+"**Successfully moved one space "+ compassDirection+"**"+Colour.RESET);
     }
 
 }

@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
+
+import Main.Colour;
 import Main.Instruction;
 
 public class InstructionParser {
@@ -17,7 +19,7 @@ private Instruction instruction;
         List<Instruction> instructionList = new ArrayList<>();
         String userSelect = "";
         do {
-            System.out.print("Please give an movement sequence using the letters above. e.g LMLMLMR: ");
+            System.out.print(Colour.message+"Please give an movement sequence using the letters above. e.g LMLMLMR: "+Colour.RESET);
 
             try {
                 userSelect = scanner.nextLine();
@@ -37,7 +39,7 @@ private Instruction instruction;
                 }
 
             } catch (InputMismatchException e) {
-                System.out.println("INVALID sequence! please input a character string using ONLY L,R,M");
+                System.out.println(Colour.error+"[!] INVALID sequence! please input a character string using ONLY L,R,M"+Colour.RESET);
             }
 
         } while (flag);

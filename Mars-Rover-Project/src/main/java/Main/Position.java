@@ -37,7 +37,7 @@ public class Position {
         String input;
         boolean flag = true;
         do{
-            System.out.print("Where to drop Rover: ");
+            System.out.print(Colour.message+"Where to drop Rover: "+Colour.RESET);
             input= scanner.nextLine();
             if (input.matches("\\d \\d [NESWnesw]") && input.length() == 5){
                 this.x = Integer.parseInt(String.valueOf(input.charAt(0)));
@@ -67,11 +67,11 @@ public class Position {
                         flag = false;
                     }
                 }catch (IndexOutOfBoundsException e){
-                    System.out.println("ERROR coordinates out of bounds from plateau!");
-                    System.out.println("Please try again!");
+                    System.out.println(Colour.error+"[!] ERROR! coordinates out of bounds from plateau!");
+                    System.out.println("Please try again!"+Colour.RESET);
                 }
             }else{
-                System.out.println("Invalid input format should be in ([x position] [y position] [N/E/S/W]) e.g. 1 1 N");
+                System.out.println(Colour.error+"[!] Invalid input! Format should be in ([x position] [y position] [N/E/S/W]) e.g. 1 1 N"+Colour.RESET);
             }
 
         }while(flag);

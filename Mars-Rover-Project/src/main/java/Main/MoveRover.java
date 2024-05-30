@@ -30,47 +30,48 @@ private List<Instruction> instructionSeq;
 
     public void movingRoverToSpace(){
         System.out.println();
-        System.out.println("initial R1 position: X,Y=("+r1.getX()+", "+r1.getY()+") "+r1.getFacing());
-        System.out.println("Please choose either to ROTATE or MOVE the rover R1 using the options below:");
+        System.out.println(Colour.message+"initial R1 position: X,Y=("+r1.getX()+", "+r1.getY()+") "+r1.getFacing() +Colour.RESET);
+        System.out.println(Colour.options+"Please choose either to ROTATE or MOVE the rover R1 using the options below:");
         System.out.println("L: Rotate Left");
         System.out.println("R: Rotate Right");
-        System.out.println("M: move ROVER one space");
+        System.out.println("M: move ROVER one space"+Colour.RESET);
         instructionSeq = IP.validateOption();
         for (Instruction i : instructionSeq) {
             if (i == Instruction.R) {
-                System.out.println("**Rotating right...**");
+                System.out.println(Colour.message+"**Rotating right...**"+Colour.RESET);
                 r1.rotate(Instruction.R);
             } else if (i == Instruction.L) {
-                System.out.println("**Rotating left...**");
+                System.out.println(Colour.message+"**Rotating left...**"+Colour.RESET);
                 r1.rotate(Instruction.L);
             } else if (i == Instruction.M) {
                 if (plateau.checkBoundary(r1)){
-                    System.out.println("**Moving ...**");
+                    System.out.println(Colour.message+"**Moving ...**"+Colour.RESET);
                     r1.move(r1.getFacing());
                 }else {
-                    System.out.println("ERROR! Rover detected boundary cannot perform move.");
+                    System.out.println(Colour.error+"[!] ERROR! Rover detected boundary cannot perform move."+Colour.RESET);
                 }
 
 
             }
         }
         System.out.print("\n");
-        System.out.println("R1 position NOW: X,Y=("+r1.getX()+", "+r1.getY()+") "+r1.getFacing());
+        System.out.println(Colour.success+"R1 position NOW: X,Y=("+r1.getX()+", "+r1.getY()+") "+r1.getFacing()+Colour.RESET);
     }
 
     public void validatePlateauSize(){
-        System.out.print("Size of plateau [xSize] [ySize]: ");
+
         Scanner scanner = new Scanner(System .in);
         String input;
         do{
+            System.out.print(Colour.message+"Size of plateau [xSize] [ySize]: "+Colour.RESET);
             input= scanner.nextLine();
-            if (input.matches("\\d \\d") && input.length() == 3){
+            if (input.matches("[1-9] [1-9]") && input.length() == 3){
                 plateau = new Plateau(Integer.parseInt(String.valueOf(input.charAt(0))),Integer.parseInt(String.valueOf(input.charAt(2))));
                 break;
             }else{
-                System.out.println("Invalid input format should be in ([x size] [y size]) e.g. 5 5");
-                System.out.println("[xSize] = 1-9 [ySize] = 1-9");
-                System.out.print("Size of plateau [xSize] [ySize]: ");
+                System.out.println(Colour.error+"[!] Invalid input! Format should be in ([x size] [y size]) e.g. 5 5");
+                System.out.println("[xSize] = 1-9 [ySize] = 1-9"+Colour.RESET);
+               // System.out.print(Colour.message+"Size of plateau [xSize] [ySize]: "+Colo);
             }
         }while(true);
 
