@@ -14,11 +14,11 @@ A plateau is created with input `5 5`.
 
 Rover's starting position is inputted `0 0 N`.
 
-Rover's starting position is `(0 0 N)`.
-The string RMM will move the rover's position to `(2 0 E)`.
+Rover's starting position is `(0, 0) N`.
+The string `RMM` will move the rover's position to `(2, 0) E`.
 
-Rover's position is `(2 0 E)`.
-The string LLM will move the rover's position to `(1 0 W)`
+Rover's position is `(2, 0) E`.
+The string `LLM` will move the rover's position to `(1, 0) W`
 
 ## Installation
 1. Install [Java](https://www.java.com/en/download/manual.jsp) (recommended version 21.0).
