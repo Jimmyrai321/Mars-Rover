@@ -4,7 +4,7 @@
 A Mars rover has been dropped on to Mars on a square/rectanglar plateau which is split into a grid with a (x,y) coordinate system. A terminal program helps to navigate the rover on this plateau which can be any size between 1-9 by 1-9. Commands and instructions are printed to the console. The rover position is represented by an (x,y) coordinate and a directional heading (N, E, S, W). For example a position of (0, 0, N) suggest the rover is in the top left corner of the plateau facing North. 
 
 ## Movement
-Pressing `1` on the menu allows you to move the rover. The rover accepts a string of instructions with 3 characters:
+Pressing `1` on the menu allows you to move the rover. The rover accepts a string of instructions comprising 3 characters:
 - M - move rover 1 grid point in the direction it's facing
 - L - rotate rover 90° anti-clockwise
 - R - rotate rover 90° clockwise
