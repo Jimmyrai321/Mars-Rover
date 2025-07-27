@@ -10,7 +10,8 @@ Pressing `1` on the menu allows you to move the rover. The rover accepts a strin
 - R - rotate rover 90° clockwise
 
 ### Example Input
-A plateau is created with input `5 5`. 
+A plateau is created with input `5 5`.
+
 Rover's starting position is inputted `0 0 N`.
 
 Rover's starting position is `(0 0 N)`.
