@@ -10,13 +10,13 @@ Pressing `1` on the menu allows you to move the rover. The rover accepts a strin
 - R - rotate rover 90° clockwise
 
 ### Example Input
-A plateau is created with input `5 5`.
+A plateau is created with input `5 5`. 
 Rover's starting position is inputted `0 0 N`.
 
 Rover's starting position is `(0 0 N)`.
 The string RMM will move the rover's position to `(2 0 E)`.
 
-Rover's position is `(2 0 E)`
+Rover's position is `(2 0 E)`.
 The string LLM will move the rover's position to `(1 0 W)`
 
 ## Installation
@@ -31,7 +31,7 @@ Application runs in IDE terminal.
 ## Future considerations
 - [x] Add movement to the rover.
 - [x] Handle collisions of rover against plateau.
-- [] Allow sample collection from plateau position.
-- [] Inventory display.
-- [] Add obstacles.
+- [ ] Allow sample collection from plateau position.
+- [ ] Inventory display.
+- [ ] Add obstacles.
 
